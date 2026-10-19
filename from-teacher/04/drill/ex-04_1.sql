@@ -1,10 +1,13 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   name,
   job,
   level
 FROM
-  s_characters
+  characters
 ORDER BY
   RANDOM()
 LIMIT

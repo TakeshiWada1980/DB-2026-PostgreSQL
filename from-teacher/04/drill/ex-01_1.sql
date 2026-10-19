@@ -1,10 +1,13 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   job,
   level,
   name
 FROM
-  s_characters
+  characters
 ORDER BY
   job,
   level DESC,
@@ -18,7 +21,7 @@ SELECT
   level,
   name
 FROM
-  s_characters
+  characters
 ORDER BY
   job ASC,
   level DESC,

@@ -1,9 +1,12 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   name,
   created_on
 FROM
-  s_characters
+  characters
 ORDER BY
   created_on
 OFFSET

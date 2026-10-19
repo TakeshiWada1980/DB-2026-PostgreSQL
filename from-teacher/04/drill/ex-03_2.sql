@@ -1,10 +1,13 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   name,
   level,
   job
 FROM
-  s_characters
+  characters
 ORDER BY
   CASE
     WHEN job = 'Samurai' THEN 1

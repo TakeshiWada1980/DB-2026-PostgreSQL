@@ -1,10 +1,13 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   name,
   level,
   guild
 FROM
-  s_characters
+  characters
 ORDER BY
   LOWER(guild) ASC NULLS FIRST,
   level;

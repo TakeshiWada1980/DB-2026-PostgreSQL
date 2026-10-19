@@ -1,10 +1,13 @@
+SET
+  search_path TO w03;
+
 SELECT
   id,
   name,
   level,
   buff
 FROM
-  s_characters
+  characters
 WHERE
   buff <> 0.00
 ORDER BY

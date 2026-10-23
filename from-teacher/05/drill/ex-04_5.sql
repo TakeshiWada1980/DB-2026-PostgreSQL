@@ -1,3 +1,6 @@
+SET
+  search_path TO w03;
+
 SELECT
   CASE
     WHEN job IN ('Priest', 'Wizard') THEN 'backline'
@@ -7,9 +10,11 @@ SELECT
   ROUND(AVG(level), 1) AS "avg_lv",
   COUNT(*) AS "num"
 FROM
-  s_characters
+  characters
 GROUP BY
   CASE
     WHEN job IN ('Priest', 'Wizard') THEN 'backline'
     ELSE 'frontline'
-  END;
+  END
+ORDER BY
+  "battle_position";

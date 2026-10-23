@@ -1,3 +1,6 @@
+SET
+  search_path TO w03;
+
 START TRANSACTION;
 
 -- 更新前のレコードを確認
@@ -8,14 +11,14 @@ SELECT
   last_login_at,
   DATE '2025-10-15' - CAST(last_login_at AS DATE) AS "Days Since Last Login"
 FROM
-  s_characters
+  characters
 ORDER BY
   id;
 
 -- 更新処理
-UPDATE s_characters
+UPDATE characters
 SET
-  buff = buff + CASE
+  buff = CASE
     WHEN DATE '2025-10-15' - CAST(last_login_at AS DATE) >= 60 THEN 0.40
     WHEN DATE '2025-10-15' - CAST(last_login_at AS DATE) >= 40 THEN 0.30
     WHEN DATE '2025-10-15' - CAST(last_login_at AS DATE) >= 20 THEN 0.20
@@ -31,7 +34,7 @@ SELECT
   last_login_at,
   DATE '2025-10-15' - CAST(last_login_at AS DATE) || ' days ago' AS "Days Since Last Login"
 FROM
-  s_characters
+  characters
 ORDER BY
   id;
 

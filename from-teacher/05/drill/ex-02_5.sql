@@ -1,3 +1,6 @@
+SET
+  search_path TO w03;
+
 START TRANSACTION;
 
 -- 更新前のレコードを確認
@@ -6,14 +9,14 @@ SELECT
   name,
   job
 FROM
-  s_characters
+  characters
 WHERE
   job IN ('Fighter', 'Monk', 'Samurai', 'Ninja')
 ORDER BY
   id;
 
 -- 更新処理
-UPDATE s_characters
+UPDATE characters
 SET
   job = CASE
     WHEN job = 'Fighter' THEN 'Monk'
@@ -30,7 +33,7 @@ SELECT
   name,
   job
 FROM
-  s_characters
+  characters
 WHERE
   job IN ('Fighter', 'Monk', 'Samurai', 'Ninja')
 ORDER BY

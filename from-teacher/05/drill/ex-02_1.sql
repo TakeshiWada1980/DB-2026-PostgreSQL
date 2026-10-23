@@ -1,3 +1,6 @@
+SET
+  search_path TO w03;
+
 START TRANSACTION;
 
 -- 更新前のレコードを確認
@@ -6,12 +9,12 @@ SELECT
   name,
   buff
 FROM
-  s_characters
+  characters
 ORDER BY
   id;
 
 -- 更新処理
-UPDATE s_characters
+UPDATE characters
 SET
   buff = 0.0;
 
@@ -21,7 +24,7 @@ SELECT
   name,
   buff
 FROM
-  s_characters
+  characters
 ORDER BY
   id;
 

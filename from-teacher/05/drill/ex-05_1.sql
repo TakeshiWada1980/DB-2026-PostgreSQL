@@ -1,9 +1,12 @@
+SET
+  search_path TO w03;
+
 SELECT
   job,
   ROUND(AVG(level), 1) AS "avg_lv",
   COUNT(*) AS "num"
 FROM
-  s_characters
+  characters
 GROUP BY
   job
 HAVING
